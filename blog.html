@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+
+    <title>el balance de</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900|Rubik:300,400,500" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/vendor/owl.carousel.min.css"/>
+    <link rel="stylesheet" href="css/vendor/owl.theme.default.min.css"/>
+    <link rel="stylesheet" href="css/custom.css">
+
+    <!--[if lt IE 9]>
+    <script src="js/vendor/html5shiv.min.js"></script>
+    <script src="js/vendor/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="https://use.fontawesome.com/9b701ba3c8.js"></script>
+    <script src="js/vendor/jquery.min.js"></script>
+    <script src="js/vendor/owl.carousel.min.js"></script>
+</head>
+<body>
+
+<header class="header-area">
+
+    <div class="bottom-header">
+        <div class="container h-100">
+            <div class="row h-100 align-items-center">
+                <div class="col-12">
+                    <div class="main-menu">
+                        <nav class="navbar navbar-expand-lg">
+                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#gazetteMenu" aria-controls="gazetteMenu" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-bars"></i> Menu</button>
+                            <div class="collapse navbar-collapse" id="gazetteMenu">
+                                <ul class="navbar-nav mr-auto">
+                                    <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="blog.html">Artículo</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="contact.html">Contactos</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="terms.html">Términos y condiciones</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="policy.html">Política de privacidad</a></li>
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<style>
+    .top-header {
+        position: relative;
+        z-index: 1;
+        height: 70px;
+        background-color: #1d1d1d;
+    }
+
+    .breaking-news-title {
+        font-size: 18px;
+        color: #fff;
+        text-transform: uppercase;
+        margin-bottom: 0;
+    }
+
+    #breakingNewsTicker.ticker {
+        width: 100%;
+        text-align: left;
+        position: relative;
+        overflow: hidden;
+    }
+
+    #breakingNewsTicker.ticker ul {
+        width: 100%;
+        position: relative;
+    }
+
+    #breakingNewsTicker.ticker ul li {
+        display: none;
+        width: 100%;
+    }
+
+    #breakingNewsTicker.ticker ul li a {
+        color: #fff;
+        font-size: 14px;
+    }
+
+    #breakingNewsTicker.ticker ul li a:hover {
+        color: #ff084e;
+    }
+
+    #stockNewsTicker.ticker {
+        width: 100%;
+        position: relative;
+        overflow: hidden;
+    }
+
+    #stockNewsTicker.ticker ul {
+        width: 100%;
+        position: relative;
+    }
+
+    #stockNewsTicker.ticker ul li {
+        display: none;
+        width: 100%;
+        text-align: right;
+    }
+
+    #stockNewsTicker.ticker ul li a {
+        color: #fff;
+        font-size: 14px;
+    }
+
+    .single-stock-report .stock-values span {
+        padding-right: 20px;
+        color: #fff;
+        font-weight: 300;
+        font-size: 12px;
+        text-transform: uppercase;
+    }
+
+    .single-stock-report .stock-values span:last-child {
+        color: rgba(255, 255, 255, 0.5);
+    }
+
+    .single-stock-report .stock-index h4 {
+        color: #fff;
+        margin-bottom: 0;
+    }
+
+    .single-stock-report {
+        border-right: 2px solid rgba(255, 255, 255, 0.05);
+        margin-right: 20px;
+        display: inline-block;
+        text-align: left;
+    }
+
+    .single-stock-report:last-child {
+        border-right: none;
+        margin-right: 0;
+    }
+
+    .single-stock-report .stock-index.minus-index h4,
+    .single-stock-report .stock-index.plus-index h4 {
+        color: #ff0303;
+        position: relative;
+        z-index: 1;
+        padding-left: 30px;
+    }
+
+    .single-stock-report .stock-index.minus-index h4:before,
+    .single-stock-report .stock-index.plus-index h4:before {
+        content: '\e688';
+        color: #ff0303;
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        left: -10px;
+        font-family: 'Pe-icon-7-stroke';
+        font-size: 44px;
+        line-height: 32px;
+    }
+
+    .single-stock-report .stock-index.plus-index h4 {
+        color: #30ca00;
+    }
+
+    .single-stock-report .stock-index.plus-index h4:before {
+        content: '\e682';
+        color: #30ca00;
+    }
+
+    /* :: 4.2.0 Middle Header Area CSS */
+
+    .middle-header {
+        position: relative;
+        z-index: 1;
+        height: 160px;
+        background-color: #fff;
+    }
+
+    /* :: 4.3.0 Bottom Header Area CSS */
+
+    .bottom-header {
+        width: 100%;
+        height: 55px;
+        border-bottom: 1px solid #e4e4e4;
+    }
+
+    .main-menu .navbar.navbar-expand-lg {
+        padding: 0;
+    }
+
+    .main-menu .navbar.navbar-expand-lg .nav-link {
+        color: rgba(0, 0, 0, 0.75);
+        text-transform: uppercase;
+    }
+
+    .main-menu .navbar.navbar-expand-lg .nav-item.active .nav-link,
+    .main-menu .navbar.navbar-expand-lg .nav-link:hover {
+        color: #ff0303;
+    }
+
+    .main-menu .dropdown-menu.show {
+        border: none;
+        box-shadow: 2px 5px 30px rgba(0, 0, 0, 0.15);
+    }
+
+    .main-menu .dropdown-item {
+        font-weight: 500;
+        text-transform: uppercase;
+        font-size: 14px;
+    }
+
+    .main-menu .dropdown-item:hover {
+        color: #ff0303;
+    }
+
+    .main-menu #searchbtn i {
+        font-size: 20px;
+        cursor: pointer;
+    }
+
+    .header-search-form form input {
+        width: 700px;
+        height: 35px;
+        padding: 0 15px;
+        border: 1px solid #ebebeb;
+        font-size: 12px;
+        font-style: italic;
+        border-radius: 4px;
+    }
+
+    .header-search-form {
+        display: none;
+        -webkit-transition-duration: 500ms;
+        transition-duration: 500ms;
+    }
+
+    .search-form-on .header-search-form {
+        display: block;
+    }
+
+    .search-form-on .navbar-nav {
+        display: none !important;
+    }
+
+    .collapse.in {
+        display: block;
+    }
+
+    @media only screen and (min-width: 320px) and (max-width: 992px) {
+        #gazetteMenu {
+            padding: 30px;
+            background-color: #f4f2f8;
+            z-index: 1002;
+        }
+    }
+</style>
+
+<section class="site-section py-sm">
+    <div class="container">
+
+        <div class="row blog-entries">
+            <div class="col-md-12 main-content">
+                <div class="row">
+                    
+                    <div class="col-md-4">
+                        <a href="47e717c597dd946a7a6fcb7f4f45cb80.html" class="blog-entry element-animate fadeIn element-animated" data-animate-effect="fadeIn">
+                            <img src="./assets/images/emily-sea-coiwr0gt8cw-unsplash.jpg" alt="image">
+                            <div class="blog-content-body">
+                                <div class="post-meta">
+                                    <span class="category">la estética de la</span>
+                                    <span class="mr-2">03.06.2021 </span> •
+                                    <span class="ml-2"><span class="fa fa-comments"></span> 27</span>
+                                </div>
+                                <h2>Los mejores remedios caseros para el dolor de garganta y la inflamación</h2>
+                            </div>
+                        </a>
+                    </div>
+                    
+
+                    <div class="col-md-4">
+                        <a href="38fc8a6859808aa0014df2cad98e680c.html" class="blog-entry element-animate fadeIn element-animated" data-animate-effect="fadeIn">
+                            <img src="./assets/images/pina-messina-kfjkpei6lgc-unsplash.jpg" alt="image">
+                            <div class="blog-content-body">
+                                <div class="post-meta">
+                                    <span class="category">la estética de la</span>
+                                    <span class="mr-2">03.06.2021 </span> •
+                                    <span class="ml-2"><span class="fa fa-comments"></span> 21</span>
+                                </div>
+                                <h2>Los mejores ejercicios de cardio que usted puede hacer en casa</h2>
+                            </div>
+                        </a>
+                    </div>
+                    
+
+                    <div class="col-md-4">
+                        <a href="dc74c9c08940b58a30da4518958f20bd.html" class="blog-entry element-animate fadeIn element-animated" data-animate-effect="fadeIn">
+                            <img src="./assets/images/vitalii-pavlyshynets-kcrfw-hje8y-unsplash.jpg" alt="image">
+                            <div class="blog-content-body">
+                                <div class="post-meta">
+                                    <span class="category">la estética de la</span>
+                                    <span class="mr-2">03.06.2021 </span> •
+                                    <span class="ml-2"><span class="fa fa-comments"></span> 6</span>
+                                </div>
+                                <h2>7 productos que hacen la gran caseros para la piel de las máscaras</h2>
+                            </div>
+                        </a>
+                    </div>
+                    
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .site-section.py-sm {
+        padding: 5rem 0;
+    }
+    .blog-entries .blog-entry {
+        display: block;
+        -webkit-transition: .3s all ease;
+        -o-transition: .3s all ease;
+        transition: .3s all ease;
+        margin-bottom: 30px;
+    }
+
+    .blog-entries .blog-entry:hover, .blog-entries .blog-entry:focus {
+        opacity: .7;
+    }
+
+    .blog-entries .blog-entry .blog-content-body {
+        padding: 20px;
+        border: 1px solid #efefef;
+        border-top: none;
+    }
+
+    .blog-entries .blog-entry img {
+        max-width: 100%;
+    }
+
+    .blog-entries .blog-entry h2 {
+        font-size: 18px;
+        line-height: 1.5;
+    }
+
+    .blog-entries .blog-entry p {
+        font-size: 13px;
+        color: gray;
+    }
+
+    .blog-entries .post-meta {
+        margin-bottom: 20px;
+        color: #b3b3b3;
+    }
+</style>
+
+<footer class="footer-container d-flex align-items-center">
+    <div class="container">
+        <div class="row align-items-center footer">
+            <div class="col-md-12 text-center text-md-left order-md-1 order-2">
+                <nav class="navbar navbar-expand-lg">
+                    <button aria-controls="yummyfood-footer-nav" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#yummyfood-footer-nav" data-toggle="collapse" type="button"><i aria-hidden="true" class="fa fa-bars"></i> Menu
+                    </button>
+                    <!-- Menu Area Start -->
+                    <div class="collapse navbar-collapse justify-content-left" id="yummyfood-footer-nav">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link" href="index.html">Inicio <span class="sr-only">(current)</span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="contact.html">Contactos</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="terms.html">Términos y condiciones</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="policy.html">Política de privacidad</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+                <div class="footer-social">
+                    <a href="#"><i class="fa fa-facebook"></i></a>
+                    <a href="#"><i class="fa fa-twitter"></i></a>
+                    <a href="#"><i class="fa fa-linkedin"></i></a>
+                    <a href="#"><i class="fa fa-google"></i></a>
+                    <a href="#"><i class="fa fa-pinterest"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<style>
+    .footer-container {
+        border-top: 1px solid #e4e4e4;
+        background-color: #fffcfc;
+        padding: 40px 0px;
+    }
+    @media only screen and (max-width: 991px) {
+        .footer-container {
+            padding: 25px 0px;
+        }
+    }
+
+    .footer > div {
+        padding: 15px 0px;
+    }
+
+    .footer-social a i {
+        margin: 0px 7.5px;
+    }
+
+    .back-to-top {
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+        position: fixed;
+        bottom: 0px;
+        right: 40px;
+        background-color: #232323;
+        color: #ffffff;
+        cursor: pointer;
+        visibility: hidden;
+        opacity: 0;
+        z-index: -99;
+        -webkit-transition: 0.5s ease-in-out;
+        transition: 0.5s ease-in-out;
+    }
+    .back-to-top.show {
+        z-index: 99;
+        opacity: 1;
+        visibility: visible;
+        bottom: 40px;
+    }
+    .back-to-top:hover {
+        background-color: #FF7171;
+    }
+</style>
+
+<div class='cookie-banner'>
+    <p>
+        El sitio web utiliza "cookies". Permiten identificarlo y recibir su información de la experiencia del usuario.Continuando con la navegación de la web, estoy de acuerdo con el uso de las cookies, el propietario del sitio de conformidad con  <a target="_blank" href="https://en.wikipedia.org/wiki/HTTP_cookie">Política de cookies</a>
+    </p>
+    <button class='close-cookie'>&times;</button>
+</div>
+
+<script src="js/scripts.js"></script>
+<script src="js/main.js"></script>
+<script src="js/custom.js"></script>
+
+<script>
+    window.onload = function () {
+        jQuery('.close-cookie').click(function () {
+            jQuery('.cookie-banner').fadeOut();
+        })
+    }
+
+    let elems = document.querySelectorAll('.server-name');
+    elems.forEach((elem) => {
+        elem.innerHTML = window.location.hostname
+    })
+</script>
+
+</body>
+</html>
